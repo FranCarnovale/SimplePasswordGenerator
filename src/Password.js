@@ -22,9 +22,13 @@ const Password = () =>
         const value = parseInt(event.target.value);
         setLength(value);
         if (value < 12 || value > 999)
+        {
             setFormErrors(prevErrors => ({ ...prevErrors, errors: "Password length must be between 12 and 999 characters" }));
+        }
         else
+        {
             setFormErrors(prevErrors => ({ ...prevErrors, errors: "" }));
+        }
     };
 
     const handleAmountChange = (event) =>
@@ -32,9 +36,13 @@ const Password = () =>
         const value = parseInt(event.target.value);
         setAmount(value)
         if (value < 1 || value > 30) //limit of 30 passwords so the site doesn't lag like hell
+        {
             setFormErrors(prevErrors => ({ ...prevErrors, errors: "Must generate atleast 1 password and no more than 30"}));
+        }
         else
+        {
             setFormErrors(prevErrors => ({ ...prevErrors, errors: "" }));
+        }
     }
 
     return (
